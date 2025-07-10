@@ -26,7 +26,28 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					light: 'hsl(var(--primary-light))'
+				},
+				safe: {
+					DEFAULT: 'hsl(var(--safe))',
+					foreground: 'hsl(var(--safe-foreground))',
+					light: 'hsl(var(--safe-light))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))',
+					light: 'hsl(var(--warning-light))'
+				},
+				danger: {
+					DEFAULT: 'hsl(var(--danger))',
+					foreground: 'hsl(var(--danger-foreground))',
+					light: 'hsl(var(--danger-light))'
+				},
+				medical: {
+					DEFAULT: 'hsl(var(--medical))',
+					foreground: 'hsl(var(--medical-foreground))',
+					light: 'hsl(var(--medical-light))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',

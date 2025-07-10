@@ -1,14 +1,47 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Dashboard } from "@/components/dashboard";
+import { FoodSearch } from "@/components/food-search";
+import { WeeklyStats } from "@/components/weekly-stats";
+import { useCKDApp } from "@/hooks/useCKDApp";
 
 const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const {
+    currentView,
+    setCurrentView,
+    ckdStage,
+    todayIntake,
+    weeklyData,
+    addMeal,
+    notifyMedicalTeam
+  } = useCKDApp();
+
+  switch (currentView) {
+    case 'add-food':
+      return (
+        <FoodSearch
+          ckdStage={ckdStage}
+          onBack={() => setCurrentView('dashboard')}
+          onAddMeal={addMeal}
+        />
+      );
+    
+    case 'weekly-stats':
+      return (
+        <WeeklyStats
+          weeklyData={weeklyData}
+          onBack={() => setCurrentView('dashboard')}
+        />
+      );
+    
+    default:
+      return (
+        <Dashboard
+          dailyIntake={todayIntake}
+          onAddFood={() => setCurrentView('add-food')}
+          onViewWeekly={() => setCurrentView('weekly-stats')}
+          onNotifyMedical={notifyMedicalTeam}
+        />
+      );
+  }
 };
 
 export default Index;
