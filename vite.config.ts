@@ -6,8 +6,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // ADD THIS LINE HERE:
-  base: '/kidney-khrua-control/', // This must be your GitHub repository name
+  // Base path for development (comment out for local development)
+  // base: '/kidney-khrua-control/', // Only needed for GitHub Pages deployment
 
   server: {
     host: "::",
