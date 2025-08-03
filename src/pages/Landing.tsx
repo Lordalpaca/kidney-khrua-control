@@ -34,12 +34,16 @@ const Index = () => {
               และให้คำแนะนำเฉพาะบุคคลแบบ real-time เพื่อชะลอโรคไตเรื้อรัง
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">
-                <Camera className="mr-2 w-5 h-5" />
-                ทดลองวิเคราะห์อาหาร
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">
+                <Link to="/app">
+                  <Camera className="mr-2 w-5 h-5" />
+                  ผู้ป่วย - ทดลองใช้งาน
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4 border-blue-600 text-blue-600 hover:bg-blue-50">
-                ดูข้อมูลเพิ่มเติม
+              <Button asChild size="lg" variant="outline" className="text-lg px-8 py-4 border-blue-600 text-blue-600 hover:bg-blue-50">
+                <Link to="/doctor/login">
+                  แพทย์ - เข้าสู่ระบบ
+                </Link>
               </Button>
             </div>
           </div>
